@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+{% include 'header.html.twig' %}
+<div id="layoutSidenav_content">
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Register</h1>
+        <div class="card mb-4"><div class="card-body">
+            {{ form_errors(registrationForm) }}
+
+            {{ form_start(registrationForm) }}
+                {{ form_row(registrationForm.email) }}
+                {{ form_row(registrationForm.plainPassword, {
+                    label: 'Password'
+                }) }}
+                {{ form_row(registrationForm.agreeTerms) }}
+        
+                
+            {{ form_end(registrationForm) }}</div></div>
+    </div>
+    {% include 'footer.html.twig' %}
+</div>
+{% endblock %}
